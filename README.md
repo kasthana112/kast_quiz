@@ -1,1 +1,0 @@
-# kast_quiz
