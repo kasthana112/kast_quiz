@@ -1,3 +1,6 @@
+Coding Quiz!
+Test your knowledge on coding
+
 By Kanika Asthana
 Worked on with tutor and help from google
 
