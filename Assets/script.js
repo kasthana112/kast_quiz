@@ -49,7 +49,6 @@ var questions = [
     }
 ];
 
-// function to start quiz, called by click event on start button
 function startQuiz() {
     startPage.style.visibility = "hidden"; // hide start page
     quizPage.style.visibility = "visible"; // show quiz page
@@ -108,15 +107,14 @@ function saveScore() {
         };
 
         if (localStorage.getItem("highscores") === null || localStorage.getItem("highscores") === "cleared") { //if no scores saved locally yet
-            var storedHighscores = [player]; // just save the one score
-        } else { // otherwise
-            var storedHighscores = JSON.parse(localStorage.getItem("highscores")); // create array of existing saved scores
-            storedHighscores.push(player); // push new score onto end; may be able to sort by score using splice()?
+            var storedHighscores = [player]; 
+        } else { 
+            var storedHighscores = JSON.parse(localStorage.getItem("highscores")); 
+            storedHighscores.push(player);
         }
 
-        localStorage.setItem("highscores", JSON.stringify(storedHighscores)); // stringifies scores and saves them to local storage
+        localStorage.setItem("highscores", JSON.stringify(storedHighscores)); 
 
-        // loop over array of scores and create/append a new li for each
         for (i=0; i<storedHighscores.length; i++) {
             var li = document.createElement("li");
             li.textContent = storedHighscores[i].playerName + ": " + storedHighscores[i].playerScore;
@@ -125,7 +123,6 @@ function saveScore() {
     }
 }
 
-// function for returning to start page
 function goBack() {
     highscoresPage.style.visibility = "hidden"; // hide highscores page
 
